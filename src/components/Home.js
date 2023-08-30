@@ -2,8 +2,19 @@ import React from "react";
 import "./Home.css";
 
 function Home() {
+  const header = "/assets/header.jpeg"
+  const inlineStyles = {
+    backgroundImage: `url(${header})`,
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: 'center',
+    backgroundSize: "cover",
+    backgroundAttachment: 'fixed',
+  }
   return (
-    <div className="home">
+    <div className="home" style={inlineStyles}>
+      <div className="opaque">
+
+      </div>
       <div className="navbar">
         <div className="logo"></div>
         <div className="nav-itself">
