@@ -1,23 +1,23 @@
-:root{
-    --primary-color: #E39229;
-    --secondary-color: ;
+:root {
+  --primary-color: #e39229;
+  --secondary-color: ;
 }
 
-.home{
-    height: 100vh;
-    max-width: 100vw;
-    overflow: hidden;
-    color: #fff;
-    position: relative;
+.home {
+  height: 100vh;
+  max-width: 100vw;
+  overflow: hidden;
+  color: #fff;
+  position: relative;
+
 }
 
-.opaque{
-    position: absolute;
-    height: 100%;
-    width: 40%;
-  
-
-top: 0;
-left: 0;
-
+.opaque {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 20px;
+  top: 0;
+  left: 0;
 }

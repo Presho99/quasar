@@ -1,7 +1,7 @@
 .team {
     padding: 20px;
     max-width: 100vw;
-    max-height: 100vh;
+    height: 100vh;
     overflow: hidden;
 }
 
