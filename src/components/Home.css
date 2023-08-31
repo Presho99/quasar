@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
 :root {
   --primary-color: #e39229;
   --secondary-color: ;
@@ -9,14 +10,95 @@
   overflow: hidden;
   color: #fff;
   position: relative;
+  font-family: 'Lato', sans-serif;
 
+}
+
+.frosted{
+    position: absolute;
+    z-index: 20;
+    height: 100%;
+    width: 40%;
+    background-color: rgba(0, 0, 0, 0.35);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    backdrop-filter: blur(5px);
+
+}
+
+.socials{
+    display: flex;
+    flex-direction: column;
+}
+
+.socials a{
+    color: #fff;
+    font-size: 1.5rem;
+    transition: .3s ease-in;
+    margin-bottom: 30px;
+}
+
+.socials a:hover{
+    color: #e39229;
+}
+
+.text{
+    width: 600px;
+    position: absolute;
+    /* background-color: pink; */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.text h1{
+    text-transform: uppercase;
+    font-size: 3.7rem;
+    margin-bottom: 10px;
+    font-weight: 900;
+    
+}
+
+.text p{
+    font-size: 1.5rem;
+}
+
+.text button{
+   padding: 10px 25px;
+    outline: none;
+    margin-top: 20px;
+    border: 3px solid #e39229;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    background-color: transparent;
+    cursor: pointer;
+    transition: .3s ease-in;
+       
+}
+
+
+
+.text button p{
+    font-size: 1rem;
+    transition: .3s ease-in;
+}
+
+.text button:hover p{ 
+    opacity: 0.7;
 }
 
 .opaque {
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.35);
   padding: 20px;
   top: 0;
   left: 0;
@@ -24,8 +106,21 @@
 
 .navbar{
     display: flex;
-    background-color: pink;
+    /* background-color: pink; */
     justify-content: space-between;
+    align-items: center;
+  
+}
+
+.logo {
+    z-index: 100;
+}
+
+.logo h3{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    font-weight: 900;
 }
 
 .nav ul{
@@ -34,8 +129,44 @@ display: flex;
 
 .nav ul li{
     list-style-type: none;
-    margin-left: 20px;
+    margin-left: 30px;
     text-transform: uppercase;
+    z-index: 100;
+    cursor: pointer;
+    transition: 0.3s ease-in;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav ul li::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #e39229;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s;
+}
+
+.nav ul li:hover{
+    font-weight: 700;
+    color: #e39229;  
+}
+
+.nav ul li:hover::before{
+    transform: scaleX(1);
+}
+
+.active-li{
+    font-weight: 700;
+    color: #e39229;
+}
+
+.active-li::before{
+    transform: scaleX(1);
 }
 
 .tel{
@@ -47,6 +178,7 @@ display: flex;
   color: #fff;
   transition: width 0.7s;
   position: relative;
+  cursor: pointer;
 }
 
 .tel:hover{
@@ -75,6 +207,24 @@ display: flex;
 .tel:hover .tel-text{
     opacity: 1;
     transition: opacity .5s;
+}
+
+.caret-right{
+    position: absolute;
+    cursor: pointer;
+    bottom: 100px;
+    right: 30px;
+    width: 0;
+    height: 0;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid  transparent;
+    border-left: 30px solid #fff;
+    z-index: 1000;
+    transition: .3s ease-in;
+}
+
+.caret-right:hover{
+    border-left: 30px solid #e39229;
 }
 
 
