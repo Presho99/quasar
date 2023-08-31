@@ -12,10 +12,6 @@ function Home() {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const navigate = useNavigate();
   const { pathname } = useLocation();
-  // const handleNavigateToAbout = () => {
-  //   navigate('/about')
-  //   window.scrollTo(0, 0)
-  // }
   const header = "/assets/header.jpeg";
   const inlineStyles = {
     backgroundImage: `url(${header})`,
