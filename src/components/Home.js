@@ -1,7 +1,7 @@
 import React from "react";
 import "./Home.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee, faPhone } from '@fortawesome/free-solid-svg-icons'
+import { faPhone } from '@fortawesome/free-solid-svg-icons'
 
 function Home() {
   const header = "/assets/header.jpeg"
@@ -28,9 +28,12 @@ function Home() {
             <li>Contacts</li>
           </ul>
         </div>
-        <div className="tel">
-          <FontAwesomeIcon icon={faPhone}/>
-        </div>
+        <button className="tel">
+          <FontAwesomeIcon icon={faPhone} className="phone"/>
+        <span className="tel-text">
+          Call Us
+        </span>
+        </button>
       </div>
 
       </div>
