@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { FaFacebook, FaInstagram, FaWhatsapp, FaTwitter } from "react-icons/fa";
 import { useNavigate, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const navLinks = ["Home", "About", "Projects", "Team", "Contacts"];
 
@@ -19,10 +19,12 @@ function Contacts() {
     backgroundPosition: "bottom",
     backgroundSize: "cover",
   };
+  const apiKey = "AIzaSyCOKcHWUDOdcRYLIFFtBptivFStbIeJeCs";
+  const mapUrl = `https://maps.googleapis.com/maps/api/staticmap?key=${apiKey}&center=Nairobi&zoom=12&size=600x400`;
 
   return (
     <div className="contacts">
-       <div className="overlay"></div>
+      <div className="overlay"></div>
       <div className="contact-hero" style={inlineStyles}>
         <div className="navbar">
           <div className="logo">
@@ -46,12 +48,25 @@ function Contacts() {
         <h3>Contact Us</h3>
       </div>
       <div className="contact-middle">
-        <div className="map"></div>
+        <div className="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255282.39807934483!2d36.720371935713636!3d-1.3024715129725255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f11655c311541%3A0x9dd769ac1c10b897!2sNairobi%20County!5e0!3m2!1sen!2ske!4v1693605881991!5m2!1sen!2ske"
+            style={{width:"100%",
+            height:"100%",
+            border:"none",
+            }}
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
         <div className="contact-form">
-          
+          <div className="location">
+            <FontAwesomeIcon icon={faLocationDot} />
+          </div>
         </div>
       </div>
-     
+
       <div className="footer">
         <div className="footer-text">
           <h4>Quasar</h4>

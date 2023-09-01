@@ -50,7 +50,7 @@
     width: 100%;
     background-color: pink;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .contact-middle .map{
@@ -59,7 +59,7 @@
     width: 40%;
 }
 
-.contact-middle .form{
+.contact-middle .contact-form{
     background-color: orange;
     height: 100%;
     width: 40%;
