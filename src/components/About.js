@@ -8,6 +8,7 @@ import {
   faArrowRight,
   faArrowRightLong,
 } from "@fortawesome/free-solid-svg-icons";
+import "./Contacts.css";
 
 const navLinks = ["Home", "About", "Projects", "Team", "Contacts"];
 
@@ -17,22 +18,26 @@ function About() {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const navigate = useNavigate();
   const { pathname } = useLocation();
+  const header = "/assets/skyline.jpeg";
   const showMenu = () => {
     setIsMenu(!isMenu);
+  };
+  const inlineStyles = {
+    backgroundImage: `url(${header})`,
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "bottom",
+    backgroundSize: "cover",
   };
   return (
     <div className='about'>
         <div className='blob'></div>
-        {isMenu && (
-        <div className="small-menu">
-          <div className="small-menu-card">
-            <button className="button-xmark x">
-              <FontAwesomeIcon
-                icon={faXmark}
-                className="xmark"
-                onClick={showMenu}
-              />
-            </button>
+       
+        <div className="contact-hero" style={inlineStyles}>
+        <div className="navbar">
+          <div className="logo">
+            <h3>Quasar</h3>
+          </div>
+          <div className="nav">
             <ul>
               {navLinks.map((navLink) => (
                 <li
@@ -45,38 +50,51 @@ function About() {
                 </li>
               ))}
             </ul>
-          
           </div>
         </div>
-      )}
-       <div className="top-menu">
-        <div className="logo">
-          <h4>Precious Omondi&#169;</h4>
+        <h3>About Quasar</h3>
+      </div>
+
+      <div className='our-history'>
+        <div className='history-text'>
+          <p>Founded in 2015, Quasar Energy Limited has established itself as a reliable and trusted supplier of LPG in th region. The company's commitment to quality and safety has earned it a loyal customer base, which includes residential, commrcial, and industrial clients</p>
         </div>
-        <div className="nav">
-          {isSmallScreen ? (
-            <FontAwesomeIcon
-              icon={faBars}
-              onClick={showMenu}
-              style={{ cursor: "pointer" }}
-            />
-          ) : (
-            <ul>
-              {navLinks.map((navLink) => (
-                <li
-                  onClick={() => navigate(`/${navLink.toLowerCase()}`)}
-                  className={
-                    pathname === `/${navLink.toLowerCase()}` ? "active-li" : ""
-                  }
-                >
-                  {navLink}
-                </li>
-              ))}
-            </ul>
-          )}
+        <div className='history-image'>
+          <img src="/assets/history.jpeg"/>
         </div>
       </div>
 
+      <div className='about-us'>
+        <div className='about-image'>
+          <img src="/assets/about.jpeg"/>
+        </div>
+        <div className='about-text'>
+          <p>Quasar Energy Limited is a leading gas provider in Kenya, specializing in both retail and bulk LPG. The company is headquartered in Nairobi and operates in the city and its environs, with plans to expand to other parts of the country and the Eastern African market at large.</p>
+        </div>
+      </div>
+
+      <div className='vmg'>
+        <div className='vision'>
+          <h3>Vision</h3>
+          <div className='vision-text'>
+            <p>Become the leading gas provider in East and Central Africa. Quasar Energy LImited is continuosly expanding its operations and exploring new growth opportunities</p>
+          </div>
+        </div>
+
+        <div className='mission'>
+          <h3>Mission</h3>
+          <div className='mission-text'>
+            <p>Quasar Energy Limited has quickly established itself as a major player in the energy sector. The company's mission is to be the leading gas company in the region, providing its customers with the highest quality gas products and services</p>
+          </div>
+        </div>
+
+        <div className='goals'>
+          <h3>Goals</h3>
+          <div className='goals-text'>
+            <p>The company's focus on innovation, sustainability, and customer satisfaction will remain at the core of its operations as it seeks to become a leading player in the LPG industry in Eastern Africa</p>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
