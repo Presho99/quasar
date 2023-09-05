@@ -7,6 +7,10 @@ import {
   faXmark,
   faArrowRight,
   faArrowRightLong,
+  faFireFlameSimple,
+  faIndustry,
+  faLeaf,
+  faRecycle,
 } from "@fortawesome/free-solid-svg-icons";
 import "./Contacts.css";
 
@@ -94,6 +98,49 @@ function About() {
             <p>The company's focus on innovation, sustainability, and customer satisfaction will remain at the core of its operations as it seeks to become a leading player in the LPG industry in Eastern Africa</p>
           </div>
         </div>
+      </div>
+
+      <div className='services'>
+       <div className='service-one'>
+         <div className='service-icon'>
+           <FontAwesomeIcon icon={faFireFlameSimple}/>
+         </div>
+         <div className='service-text'>
+           <h3>Individual LPG Cylinders</h3>
+           <p>Diverse sizes for household LPG needs</p>
+         </div>
+       </div>
+
+       <div className='service-two'>
+         <div className='service-icon'>
+           <FontAwesomeIcon icon={faIndustry}/>
+         </div>
+         <div className='service-text'>
+           <h3>Bulk LPG for Businesses</h3>
+           <p>Supplying hotels, restaurants, and manufacturing plants</p>
+         </div>
+       </div>
+
+       <div className='service-three'>
+         <div className='service-icon'>
+           <FontAwesomeIcon icon={faLeaf}/>
+         </div>
+         <div className='service-text'>
+           <h3>Sustainability Initiatives</h3>
+           <p>Investing in renewables, promoting energy efficiency</p>
+         </div>
+       </div>
+
+       <div className='service-four'>
+         <div className='service-icon'>
+           <FontAwesomeIcon icon={faRecycle}/>
+         </div>
+         <div className='service-text'>
+           <h3>Environmental Stewardship</h3>
+           <p>Reducing carbon footprint through eco-friendly practices</p>
+         </div>
+       </div>
+
       </div>
     </div>
   )
