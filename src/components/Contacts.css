@@ -14,25 +14,26 @@
   /* position: absolute;
   top: 0;
   left: 0; */
-  height: 30%;
+  height: 35%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-transform: uppercase;
+ 
 }
 
-
-
-.contact-hero .navbar{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 10px 30px;
-    z-index: 100;
+.contact-hero .navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px 30px;
+  z-index: 100;
 }
 
-.contact-hero h3{
-    z-index: 100;
+.contact-hero h3 {
+  z-index: 100;
+
 }
 
 .overlay {
@@ -41,53 +42,90 @@
   top: 0;
   left: 0;
   height: 30%;
-  background-color: rgba(0,0,0,0.75);
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+.contact-middle {
+  height: 55%;
+  width: 100%;
+  /* background-color: pink; */
+  display: flex;
+  justify-content: space-evenly;
+padding: 20px;
+}
+
+.contact-middle .map {
+  background-color: black;
+  height: 100%;
+  width: 50%;
+}
+
+.contact-middle .contact-form {
+  /* background-color: orange; */
+  height: 100%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: center;
+  color: black;
   
 }
 
-.contact-middle{
-    height: 50%;
-    width: 100%;
-    background-color: pink;
-    display: flex;
-    justify-content: space-evenly;
+.cont {
+  display: flex;
+  margin-bottom: 20px;
+  /* background-color: blue; */
+  height: 60px;
+  align-items: center;
 }
 
-.contact-middle .map{
-    background-color: black;
-    height: 100%;
-    width: 40%;
+.cont-icon{
+    font-size: 1.4rem;
+    color: #e39229;
 }
 
-.contact-middle .contact-form{
-    background-color: orange;
-    height: 100%;
-    width: 40%;
+.cont-text{
+    margin-left: 20px;
 }
 
-.footer{
-    height: 15%;
-    width: 100%;
-    background-color: #fff;
-    color: blue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.footer-text h4{
+.cont-text h4{
     text-transform: uppercase;
-    font-size: 2rem;
-    letter-spacing: 4px;
-
+    font-size: .8rem;
 }
 
-.footer-text p{
-
+.cont-text p{
+    font-size: 1.2rem;
 }
 
-.name{
-    height: 5%;
-    width: 100%;
-    background-color: pink;
+.footer {
+  height: 10%;
+  width: 100%;
+  background-color: #e39229;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
 }
+
+.footer-text{
+    /* background-color: #fff; */
+}
+
+.footer-text h4 {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 4px;
+}
+
+
+
+.footer-p{
+/* background-color: red; */
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+
