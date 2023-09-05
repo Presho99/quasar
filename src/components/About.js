@@ -14,7 +14,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "./Contacts.css";
 
-const navLinks = ["Home", "About", "Projects", "Team", "Contacts"];
+const navLinks = ["Home", "About", "Safety", "Contacts"];
 
 
 function About() {

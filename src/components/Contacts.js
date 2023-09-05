@@ -9,7 +9,7 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 
-const navLinks = ["Home", "About", "Projects", "Team", "Contacts"];
+const navLinks = ["Home", "About", "Safety", "Contacts"];
 
 function Contacts() {
   const [isMenu, setIsMenu] = useState(false);
