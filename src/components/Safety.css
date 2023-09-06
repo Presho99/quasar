@@ -1,0 +1,21 @@
+.safety{
+    height: 100vh;
+    width: 100vw;
+}
+
+.safety-container{
+    background-color: red;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: center;
+    margin-top: 20px;
+    height: 700px;
+}
+
+.safety-card{
+    background-color: pink;
+    margin: 10px;
+    width: 350px;
+
+}

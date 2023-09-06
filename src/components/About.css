@@ -1,5 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
+
 .about{
     height: 100vh;
     width: 100vw;
+    font-family: 'Lato', sans-serif;
+   
+}
+
+.about-overlay{
+    /* position: fixed; */
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 35%;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+.about-hero{
+    width: 100%;
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    /* position: fixed; */
+
+}
+
+.about-hero .navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 30px;
+    z-index: 100;
+}
+
+.our-history, .about-us{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    padding: 0 80px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    /* background-color: pink; */
+}
+
+.history-text, .about-text{
+    width: 50%;
+    height: 100%;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
     
+}
+
+.history-text h2, .about-text h2{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.history-text p, .about-text p{
+    font-size: 1.1rem;
+    line-height: 2;
+}
+
+.history-image{
+    width: 40%;
+    height: 100%;
+}
+
+.history-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-image{
+    width: 40%;
+    height: 100%;
+}
+
+.about-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.vmg{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    background-color: #e39229;
+    margin-top: 20px;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+}
+
+.vmg-buttons{
+    display: flex;
+    width: 100%;
+    
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.vmg-buttons button{
+    padding: 20px 50px;
+    /* border: 2px solid orange; */
+    border: 0;
+    /* background-color: transparent; */
+    outline: none;font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+  
+    color: #fff;
+
+}
+
+.vmg-buttons button::before{
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: 1;
+background-color: rgba(255, 255, 255, 0.4);
+transition: .3s ease-in;
+}
+
+.vmg-buttons button:hover::before{
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+
+}
+
+.vmg-buttons button::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all .3s;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transform: scale(1.2, 1.2);
+}
+
+.vmg-buttons button:hover::after{
+    opacity: 1;
+    transform: scale(1, 1);
+}
+
+.active-vmg{
+    background-color: orange;
+    border: 2px solid orange;
+    color: brown;
+    opacity: 1;
+    transform: scale(1, 1);
+    
+}
+
+.vmg-text{
+    /* background-color: orange; */
+    font-size: 1.1rem; 
+    padding: 20px 50px;
+}
+
+.vision-text{
+    /* background-color: red; */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vision-text p{
+    line-height: 2;
+}
+
+.services{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+    height: 300px;
+}
+
+.services h2{
+    font-size: 2.5rem;
+    margin-top: 30px;
+}
+
+.service-itself{
+   display: flex; 
+   flex-wrap: wrap;
+   height: 250px;
+   width: 100%;
+   padding: 20px;
+   justify-content: center;
+}
+
+.service{
+    width: 500px;
+    /* background-color: pink; */
+
+    display: flex;
+    margin: 25px;
+}
+
+.service-icon{
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    /* background-color: orange; */
+    border: 3px solid orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.service-text{
+    margin-left: 20px;
+}
+
+.service-text p{
+    font-size: 1.1rem;
+    margin-top: 6px;
 }
