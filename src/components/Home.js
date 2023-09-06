@@ -38,13 +38,16 @@ function Home() {
         {isMenuOpen && (
           <div className="small-menu">
             <div className="small-menu-card">
-              <button className="button-xmark x">
-                <FontAwesomeIcon
-                  icon={faXmark}
-                  className="xmark"
-                  onClick={toggleMenu}
-                />
-              </button>
+              <div className="small-logo">
+                <img src="/assets/logo.png"/>
+              </div>
+               
+              <div className="small-title">
+                <h3>Quasar</h3>
+              
+
+              </div>
+             
               <ul>
                 {navLinks.map((navLink) => (
                   <li
@@ -59,6 +62,13 @@ function Home() {
                   </li>
                 ))}
               </ul>
+              <button className="button-xmark x">
+                <FontAwesomeIcon
+                  icon={faXmark}
+                  className="xmark"
+                  onClick={toggleMenu}
+                />
+              </button>
             </div>
           </div>
         )}
@@ -100,6 +110,7 @@ function Home() {
             {isSmallScreen ? (
               <FontAwesomeIcon
                 icon={faBars}
+                className="nav-bars"
                 onClick={toggleMenu}
                 style={{ cursor: "pointer" }}
               />
