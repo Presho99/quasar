@@ -333,7 +333,75 @@
 }
 }
 
+/* Surface duo */
+
+/* @media (min-width: 540px) and (min-height: 720px){
+    .socials{
+        display: none;
+    }
+
+  
+
+  .text{
+      
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px 35px;
+  }
+}
+
+.text h1{
+    font-size: 2.4rem;
+}
+
+.text p{
+    font-size: 1.5rem;
+}
+
+.caret{
+    justify-content: space-between;
+    bottom: 50px;
+}
+
+.caret-socials{
+  display: flex;  
+  justify-content: space-between;
+  width: 40%;
+  
+}
+
+.caret-socials a{
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.caret-icon{
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+.caret-icon:hover{
+    font-size: 1.3rem;
+}
+
+.nav-bars{
+    font-size: 1.3rem;
+}
+
+.navbar{
+  
+    padding-top: 15px;
+}
+
+.tel{
+    display: none;
+}
+
 
 
   
-  
+   */

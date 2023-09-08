@@ -46,7 +46,7 @@ justify-content: center;
 }
 
 .small-menu-card{
-    background-color: #000;
+    background: linear-gradient(50deg, #175762, #185A66,  #276550, #16535D, #17555D, #276550); 
     position: relative;
     z-index: 800;
     height: 100%;
@@ -116,7 +116,7 @@ justify-content: center;
     justify-content: center;
     cursor: pointer;
     width: 100%;
-    color: #6BE47C;
+    color: #fff;
     
 }
 
