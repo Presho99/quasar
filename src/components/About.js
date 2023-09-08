@@ -17,19 +17,17 @@ import "./Contacts.css";
 const navLinks = ["Home", "About", "Safety", "Contacts"];
 
 function About() {
-  const [isMenu, setIsMenu] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
-  const [activeButton, setActiveButton] = useState('Vision')
+  const [activeButton, setActiveButton] = useState("Vision");
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const header = "/assets/skyline.jpeg";
-  const showMenu = () => {
-    setIsMenu(!isMenu);
-  };
+  
 
   const handleButtonClick = (buttonName) => {
-    setActiveButton(buttonName)
-  }
+    setActiveButton(buttonName);
+  };
   const inlineStyles = {
     backgroundImage: `url(${header})`,
     backgroundRepeat: "no-repeat",
@@ -37,16 +35,34 @@ function About() {
     backgroundSize: "cover",
     backgroundAttachment: "fixed",
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 767);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
   return (
     <div className="about">
       <div className="about-hero" style={inlineStyles}>
         <div className="about-overlay"></div>
+        {isMenuOpen && (
+        <div className="small-menu">
+          <div className="small-menu-card">
+            <div className="small-logo">
+              <img src="/assets/logo.png" alt="logo" />
+            </div>
 
-        <div className="navbar">
-          <div className="logo">
-            <h3>Quasar</h3>
-          </div>
-          <div className="nav">
+            <div className="small-title">
+              <h3>Qu<span>a</span>sar</h3>
+            </div>
+
             <ul>
               {navLinks.map((navLink) => (
                 <li
@@ -59,9 +75,49 @@ function About() {
                 </li>
               ))}
             </ul>
+            <button className="button-xmark x">
+              <FontAwesomeIcon
+                icon={faXmark}
+                className="xmark"
+                onClick={toggleMenu}
+              />
+            </button>
           </div>
         </div>
-        <h3>About Quasar</h3>
+      )}
+
+        <div className="navbar">
+          <div className="logo">
+            <h3>Quasar</h3>
+          </div>
+          <div className="nav">
+          {isSmallScreen ? (
+              <FontAwesomeIcon
+                icon={faBars}
+                className="nav-bars"
+                onClick={toggleMenu}
+                style={{ cursor: "pointer" }}
+              />
+            ) : (
+              <ul>
+                {navLinks.map((navLink) => (
+                  <li
+                    onClick={() => navigate(`/${navLink.toLowerCase()}`)}
+                    className={
+                      pathname === `/${navLink.toLowerCase()}`
+                        ? "active-li"
+                        : ""
+                    }
+                  >
+                    {navLink}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>
+        <h3 className="about-tagline">About Quasar</h3>
+        
       </div>
 
       <div className="our-history">
@@ -98,38 +154,59 @@ function About() {
       <div className="vmg">
         <div className="vmg-buttons">
           <div className="vision">
-            <button 
-            className={activeButton === 'Vision' ? 'active-vmg' : ''}
-            onClick ={() => handleButtonClick('Vision')}
+            <button
+              className={activeButton === "Vision" ? "active-vmg" : ""}
+              onClick={() => handleButtonClick("Vision")}
             >
-Vision
+              Vision
             </button>
-            </div>
+          </div>
 
           <div className="mission">
-            <button 
-            className={activeButton === "Mission" ? 'active-vmg' : ''}
-            onClick={() => handleButtonClick('Mission')}
-            
-            >Mission</button>
+            <button
+              className={activeButton === "Mission" ? "active-vmg" : ""}
+              onClick={() => handleButtonClick("Mission")}
+            >
+              Mission
+            </button>
           </div>
 
           <div className="goals">
             <button
-            className={activeButton === "Goals" ? 'active-vmg' : ''}
-            onClick={() => handleButtonClick('Goals')}
-            >Goals</button>
+              className={activeButton === "Goals" ? "active-vmg" : ""}
+              onClick={() => handleButtonClick("Goals")}
+            >
+              Goals
+            </button>
           </div>
         </div>
         <div className="vmg-text">
           <div className="vision-text">
-            {activeButton === "Vision" && <p>Become the leading gas provider in East and Central Africa. Quasar Energy Limited is continuosly expanding its operations and exploring new growth opportunities</p> }
-          
-          
-            {activeButton === "Mission" &&  <p>Quasar Energy Limited has quickly established itself as a major player in the energy sector. The company's mission is to be the leading gas company in the region, providing its customers with the highest quality gas products and services</p> }
-        
-          
-            {activeButton === "Goals" &&  <p>The company's focus on innovation, sustainability, and customer satisfaction will remain at the core of its operations as it seeks to become a leading player in the LPG industry in Eastern Africa</p> }
+            {activeButton === "Vision" && (
+              <p>
+                Become the leading gas provider in East and Central Africa.
+                Quasar Energy Limited is continuosly expanding its operations
+                and exploring new growth opportunities
+              </p>
+            )}
+
+            {activeButton === "Mission" && (
+              <p>
+                Quasar Energy Limited has quickly established itself as a major
+                player in the energy sector. The company's mission is to be the
+                leading gas company in the region, providing its customers with
+                the highest quality gas products and services
+              </p>
+            )}
+
+            {activeButton === "Goals" && (
+              <p>
+                The company's focus on innovation, sustainability, and customer
+                satisfaction will remain at the core of its operations as it
+                seeks to become a leading player in the LPG industry in Eastern
+                Africa
+              </p>
+            )}
           </div>
         </div>
       </div>
@@ -137,52 +214,54 @@ Vision
       <div className="services">
         <h2>Our Services</h2>
         <div className="service-itself">
-        <div className="service">
-          <div className="service-icon">
-            <FontAwesomeIcon icon={faFireFlameSimple} />
+          <div className="service">
+            <div className="service-icon">
+              <FontAwesomeIcon icon={faFireFlameSimple} />
+            </div>
+            <div className="service-text">
+              <h3>Individual LPG Cylinders</h3>
+              <p>Diverse sizes for household LPG needs</p>
+            </div>
           </div>
-          <div className="service-text">
-            <h3>Individual LPG Cylinders</h3>
-            <p>Diverse sizes for household LPG needs</p>
+
+          <div className="service">
+            <div className="service-icon">
+              <FontAwesomeIcon icon={faIndustry} />
+            </div>
+            <div className="service-text">
+              <h3>Bulk LPG for Businesses</h3>
+              <p>Supplying hotels, restaurants, and manufacturing plants</p>
+            </div>
+          </div>
+
+          <div className="service">
+            <div className="service-icon">
+              <FontAwesomeIcon icon={faLeaf} />
+            </div>
+            <div className="service-text">
+              <h3>Sustainability Initiatives</h3>
+              <p>Investing in renewables, promoting energy efficiency</p>
+            </div>
+          </div>
+
+          <div className="service">
+            <div className="service-icon">
+              <FontAwesomeIcon icon={faRecycle} />
+            </div>
+            <div className="service-text">
+              <h3>Environmental Stewardship</h3>
+              <p>Reducing carbon footprint through eco-friendly practices</p>
+            </div>
           </div>
         </div>
+      </div>
 
-        <div className="service">
-          <div className="service-icon">
-            <FontAwesomeIcon icon={faIndustry} />
-          </div>
-          <div className="service-text">
-            <h3>Bulk LPG for Businesses</h3>
-            <p>Supplying hotels, restaurants, and manufacturing plants</p>
-          </div>
-        </div>
-
-
-        <div className="service">
-          <div className="service-icon">
-            <FontAwesomeIcon icon={faLeaf} />
-          </div>
-          <div className="service-text">
-            <h3>Sustainability Initiatives</h3>
-            <p>Investing in renewables, promoting energy efficiency</p>
-          </div>
-        </div>
-
-        <div className="service">
-          <div className="service-icon">
-            <FontAwesomeIcon icon={faRecycle} />
-          </div>
-          <div className="service-text">
-            <h3>Environmental Stewardship</h3>
-            <p>Reducing carbon footprint through eco-friendly practices</p>
-          </div>
-        </div>
-        </div>
-      
-
+      <div className="about-footer">
+        <h3>REady to buy your clan energy?  </h3>
+        <h3>Start your free trial today</h3>
+        <button>Contact Us</button>
       </div>
     </div>
-  
   );
 }
 

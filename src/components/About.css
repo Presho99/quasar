@@ -7,18 +7,13 @@
    
 }
 
-.about-overlay{
-    /* position: fixed; */
-    width: 100%;
-    top: 0;
-    left: 0;
-    height: 35%;
-    background-color: rgba(0, 0, 0, 0.55);
-}
+
 
 .about-hero{
     width: 100%;
+    position: relative;
     /* position: absolute; */
+    color: #fff;
     top: 0;
     left: 0;
     height: 35%;
@@ -31,12 +26,28 @@
 
 }
 
+.about-overlay{
+    /* position: fixed; */
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.55);
+    position: absolute;
+    color: #fff;
+}
+
 .about-hero .navbar{
-    position: fixed;
+    position: absolute;
     top: 0;
     width: 100%;
     padding: 10px 30px;
     z-index: 100;
+    color:#fff;
+}
+
+.about-tagline{
+    z-index: 500;
 }
 
 .our-history, .about-us{
@@ -44,7 +55,7 @@
     height: 300px;
     display: flex;
     padding: 0 80px;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     margin-top: 60px;
     /* background-color: pink; */
@@ -69,7 +80,7 @@
 
 .history-text p, .about-text p{
     font-size: 1.1rem;
-    line-height: 2;
+    line-height: 1.8;
 }
 
 .history-image{
@@ -98,8 +109,8 @@
     display: flex;
     flex-direction: column;
     padding: 40px;
-    background-color: #e39229;
-    margin-top: 20px;
+    /* background-color: #e39229; */
+    margin-top: 50px;
     height: 300px;
     align-items: center;
     justify-content: center;
@@ -242,4 +253,13 @@ transition: .3s ease-in;
 .service-text p{
     font-size: 1.1rem;
     margin-top: 6px;
+}
+
+.about-footer{
+    background: linear-gradient(to right, #175762, #276550, #16535D, #17555D, #276550); 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
