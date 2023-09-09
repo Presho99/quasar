@@ -13,10 +13,10 @@
     width: 100%;
     position: relative;
     /* position: absolute; */
-    color: #fff;
+    /* color: #fff; */
     top: 0;
     left: 0;
-    height: 35%;
+    /* height: 35%; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,30 +38,42 @@
 }
 
 .about-hero .navbar{
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
-    padding: 10px 30px;
+    padding: 20px 40px;
     z-index: 100;
     color:#fff;
+    background: linear-gradient(70deg, #175762, #185A66, #16535D, #17555D, #276550); 
+    /* margin-bottom: 50px; */
 }
 
 .about-tagline{
     z-index: 500;
 }
 
-.our-history, .about-us{
+.our-history{
     width: 100%;
-    height: 300px;
+    height: 500px;
+    display: flex;
+    padding: 0 70px;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 150px;
+    /* background-color: pink; */
+}
+
+
+.about-us{
+    width: 100%;
+    /* background-color: red; */
     display: flex;
     padding: 0 80px;
     justify-content: space-around;
     align-items: center;
-    margin-top: 60px;
-    /* background-color: pink; */
+    margin-top: 100px;
 }
-
-.history-text, .about-text{
+.history-text{
     width: 50%;
     height: 100%;
     /* background-color: blue; */
@@ -73,9 +85,16 @@
     
 }
 
+.about-text{
+    /* background-color: pink; */
+    text-align: center;
+    width: 70%;
+}
+
 .history-text h2, .about-text h2{
     font-size: 2.5rem;
     margin-bottom: 20px;
+    color: #1B5A5F;
 }
 
 .history-text p, .about-text p{
@@ -84,15 +103,50 @@
 }
 
 .history-image{
-    width: 40%;
-    height: 100%;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    /* background-color: blue; */
+    justify-content: space-between;
 }
 
-.history-image img{
+/* .history-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
+
+.history-top{
+    height: 249px;
+    width: 100%;
+}
+
+.history-bottom{
+    
+    display: flex;
+  justify-content: space-between;
+  height: 249px;
+  width: 100%;
+}
+
+.history-first{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
+.history-second{
+    width: 249px;
+    height: 100%;
+}
+
+.history-third{
+    width: 249px;
+    height: 100%;
+   
+}
+
 
 .about-image{
     width: 40%;
@@ -110,7 +164,7 @@
     flex-direction: column;
     padding: 40px;
     /* background-color: #e39229; */
-    margin-top: 50px;
+    margin-top: 100px;
     height: 300px;
     align-items: center;
     justify-content: center;
@@ -127,59 +181,24 @@
 
 .vmg-buttons button{
     padding: 20px 50px;
-    /* border: 2px solid orange; */
+
     border: 0;
-    /* background-color: transparent; */
+ 
     outline: none;font-size: 1.1rem;
     cursor: pointer;
     border-radius: 5px;
     position: relative;
-  
+
     color: #fff;
 
 }
 
-.vmg-buttons button::before{
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-z-index: 1;
-background-color: rgba(255, 255, 255, 0.4);
-transition: .3s ease-in;
-}
 
-.vmg-buttons button:hover::before{
-    opacity: 0;
-    transform: scale(0.5, 0.5);
 
-}
-
-.vmg-buttons button::after{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    opacity: 0;
-    transition: all .3s;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    transform: scale(1.2, 1.2);
-}
-
-.vmg-buttons button:hover::after{
-    opacity: 1;
-    transform: scale(1, 1);
-}
 
 .active-vmg{
-    background-color: orange;
-    border: 2px solid orange;
-    color: brown;
+    background-color: #16535D;
+    
     opacity: 1;
     transform: scale(1, 1);
     
@@ -188,7 +207,10 @@ transition: .3s ease-in;
 .vmg-text{
     /* background-color: orange; */
     font-size: 1.1rem; 
+    display: flex;
     padding: 20px 50px;
+    justify-content: center;
+    align-items: center;
 }
 
 .vision-text{
@@ -197,6 +219,7 @@ transition: .3s ease-in;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 70%;
 }
 
 .vision-text p{
@@ -210,11 +233,14 @@ transition: .3s ease-in;
     justify-content: center;
     align-items: center;   
     height: 300px;
+    margin-bottom: 100px;
+
 }
 
 .services h2{
     font-size: 2.5rem;
     margin-top: 30px;
+    color: #16535D;
 }
 
 .service-itself{
@@ -239,7 +265,7 @@ transition: .3s ease-in;
     height: 50px;
     font-size: 1.2rem;
     /* background-color: orange; */
-    border: 3px solid orange;
+    border: 3px solid #1B5A5F;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -256,10 +282,12 @@ transition: .3s ease-in;
 }
 
 .about-footer{
-    background: linear-gradient(to right, #175762, #276550, #16535D, #17555D, #276550); 
+    background: linear-gradient(70deg, #175762, #185A66, #16535D, #17555D, #276550);  
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100px;
+    color: #fff;
 }

@@ -23,7 +23,6 @@ function About() {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const header = "/assets/skyline.jpeg";
-  
 
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);
@@ -50,48 +49,52 @@ function About() {
   };
   return (
     <div className="about">
-      <div className="about-hero" style={inlineStyles}>
-        <div className="about-overlay"></div>
+      <div className="about-hero">
+        {/* <div className="about-overlay"></div> */}
         {isMenuOpen && (
-        <div className="small-menu">
-          <div className="small-menu-card">
-            <div className="small-logo">
-              <img src="/assets/logo.png" alt="logo" />
-            </div>
+          <div className="small-menu">
+            <div className="small-menu-card">
+              <div className="small-logo">
+                <img src="/assets/logo.png" alt="logo" />
+              </div>
 
-            <div className="small-title">
-              <h3>Qu<span>a</span>sar</h3>
-            </div>
+              <div className="small-title">
+                <h3>
+                  Qu<span>a</span>sar
+                </h3>
+              </div>
 
-            <ul>
-              {navLinks.map((navLink) => (
-                <li
-                  onClick={() => navigate(`/${navLink.toLowerCase()}`)}
-                  className={
-                    pathname === `/${navLink.toLowerCase()}` ? "active-li" : ""
-                  }
-                >
-                  {navLink}
-                </li>
-              ))}
-            </ul>
-            <button className="button-xmark x">
-              <FontAwesomeIcon
-                icon={faXmark}
-                className="xmark"
-                onClick={toggleMenu}
-              />
-            </button>
+              <ul>
+                {navLinks.map((navLink) => (
+                  <li
+                    onClick={() => navigate(`/${navLink.toLowerCase()}`)}
+                    className={
+                      pathname === `/${navLink.toLowerCase()}`
+                        ? "active-li"
+                        : ""
+                    }
+                  >
+                    {navLink}
+                  </li>
+                ))}
+              </ul>
+              <button className="button-xmark x">
+                <FontAwesomeIcon
+                  icon={faXmark}
+                  className="xmark"
+                  onClick={toggleMenu}
+                />
+              </button>
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
         <div className="navbar">
           <div className="logo">
             <h3>Quasar</h3>
           </div>
           <div className="nav">
-          {isSmallScreen ? (
+            {isSmallScreen ? (
               <FontAwesomeIcon
                 icon={faBars}
                 className="nav-bars"
@@ -116,8 +119,7 @@ function About() {
             )}
           </div>
         </div>
-        <h3 className="about-tagline">About Quasar</h3>
-        
+        {/* <h3 className="about-tagline">About Quasar</h3> */}
       </div>
 
       <div className="our-history">
@@ -125,20 +127,27 @@ function About() {
           <h2>Our History</h2>
           <p>
             Founded in 2015, Quasar Energy Limited has established itself as a
-            reliable and trusted supplier of LPG in th region. The company's
+            reliable and trusted supplier of LPG in the region. The company's
             commitment to quality and safety has earned it a loyal customer
-            base, which includes residential, commrcial, and industrial clients
+            base, which includes residential, commercial, and industrial clients
           </p>
         </div>
         <div className="history-image">
-          <img src="/assets/history.jpeg" />
+          <div className="history-top">
+            <img src="/assets/history.jpeg" className="history-first" />
+          </div>
+
+          <div className="history-bottom">
+            <img src="/assets/history.jpeg" className="history-second" />
+            <img src="/assets/history.jpeg" className="history-third" />
+          </div>
         </div>
       </div>
 
       <div className="about-us">
-        <div className="about-image">
+        {/* <div className="about-image">
           <img src="/assets/about.jpeg" />
-        </div>
+        </div> */}
         <div className="about-text">
           <h2>About Us</h2>
           <p>
@@ -257,9 +266,9 @@ function About() {
       </div>
 
       <div className="about-footer">
-        <h3>REady to buy your clan energy?  </h3>
-        <h3>Start your free trial today</h3>
-        <button>Contact Us</button>
+        <h3>REady to buy your clan energy? </h3>
+        {/* <h3>Start your free trial today</h3> */}
+        <button className="footer-button">Contact Us</button>
       </div>
     </div>
   );
