@@ -83,7 +83,7 @@ padding: 20px;
 
 .cont-icon{
     font-size: 1.4rem;
-    color: #e39229;
+    color:  #16535D;
 }
 
 .cont-text{
@@ -102,8 +102,8 @@ padding: 20px;
 .footer {
   height: 10%;
   width: 100%;
-  background-color: #e39229;
-  color: black;
+  background: linear-gradient(70deg, #175762, #185A66, #16535D, #17555D, #276550); 
+  color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;

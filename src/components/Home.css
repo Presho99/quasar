@@ -46,7 +46,7 @@ justify-content: center;
 }
 
 .small-menu-card{
-    background: linear-gradient(50deg, #175762, #185A66,  #276550, #16535D, #17555D, #276550); 
+    background: linear-gradient(70deg, #175762, #185A66, #16535D, #17555D, #276550); 
     position: relative;
     z-index: 800;
     height: 100%;
@@ -116,7 +116,7 @@ justify-content: center;
     justify-content: center;
     cursor: pointer;
     width: 100%;
-    color: #fff;
+    color: #6BE47C;
     
 }
 
@@ -213,7 +213,7 @@ border-radius: 5px;
 .text button:hover{
     border: none;
     background-color: #6BE47C;
-    color: #000;
+    color: #1B5A5F;
 }
 
 
@@ -224,7 +224,7 @@ border-radius: 5px;
 }
 
 .text button:hover p{ 
-    opacity: 0.7;
+    font-weight: 700;
   
 }
 
@@ -232,7 +232,7 @@ border-radius: 5px;
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgba(0, 0, 0, 0.25);
   padding: 30px;
   top: 0;
   left: 0;
@@ -328,7 +328,7 @@ display: flex;
   border-radius: 50px;
   border: 2px solid #6BE47C;
   background-color: #6BE47C;
-  color: #0171C0;
+  color: #1B5A5F;
   transition: width 0.7s;
   position: relative;
   cursor: pointer;
