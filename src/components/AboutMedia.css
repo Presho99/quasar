@@ -1,0 +1,309 @@
+@media (min-width: 280px) and (max-width: 540px){
+    .about{
+    
+    }
+
+    .our-history{
+        width: 100%;
+    
+        display: flex;
+        flex-direction: column;
+        padding: 0 10px;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 50px;
+        /* background-color: pink; */
+    }
+
+    .history-text{
+        width: 100%;
+        height: 100%;
+        /* background-color: blue; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 30px;
+        
+    }
+
+    .history-text h2, .about-text h2{
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #1B5A5F;
+    }
+    
+    .history-text p, .about-text p{
+        font-size: .9rem;
+        line-height: 1.6;
+    }
+    
+    .history-image{
+        width: 500px;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        /* background-color: blue; */
+        justify-content: space-between;
+    }
+
+    .history-bottom{
+        display: none;
+    }
+
+    .about-us{
+        width: 100%;
+        /* background-color: red; */
+        display: flex;
+        padding: 0 30px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .about-text{
+        /* background-color: pink; */
+        text-align: center;
+        width: 100%;
+    }
+
+    .vmg{
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        /* background-color: #e39229; */
+        margin-top: 50px;
+        /* height: 300px; */
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .vmg-buttons{
+        width: 100%;
+        display: flex;        
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .vmg-buttons button{
+        padding: 20px;
+        border: 0;
+        outline: none;font-size: .8rem;
+        cursor: pointer;
+        border-radius: 5px;
+        position: relative;
+        color: #fff;
+    }
+    .active-vmg{
+        background-color: #16535D;
+        /* opacity: 1; */
+        transform: scale(1, 1);
+        
+    }
+
+    .vmg-text{
+        /* background-color: orange; */
+        font-size: .9rem; 
+        display: flex;
+        padding: 20px ;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .vision-text{
+        /* background-color: red; */
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .vision-text p{
+        line-height: 2;
+    }
+
+    .services{
+        /* background-color: red; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;   
+    
+        margin-bottom: 50px;
+    }
+    
+    .services h2{
+        font-size: 2rem;
+        /* margin-top: 30px; */
+        color: #16535D;
+    }
+
+    .service-itself{
+        display: flex; 
+        flex-wrap: wrap;
+
+        width: 100%;
+        padding: 10px;
+        
+        /* background-color: aqua; */
+     }
+     
+     .service{
+         width: 100%;
+         /* background-color: pink; */
+         display: flex;
+         margin: 10px;
+         align-items: center;
+     }
+     
+     .service-icon{
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+        /* background-color: orange; */
+        /* border: 3px solid #1B5A5F; */
+        color: #16535D;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border-radius: 50%; */
+    }
+     
+     .service-text{
+         margin-left: 20px;
+     }
+
+     .service-text h3{
+         font-size: 1.1rem;
+     }
+     
+     .service-text p{
+         font-size: .9rem;
+         margin-top: 6px;
+     }
+
+     .about-footer{
+        background: linear-gradient(70deg, #175762, #185A66, #16535D, #17555D, #276550);  
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 150px;
+        color: #fff;
+    }
+    
+    
+    .about-footer h3{
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+    }
+    
+    .footer-button{
+        outline: none;
+        border: none;
+        width: 150px;
+        height: 50px;
+        font-size: 1.1rem;
+        border-radius: 10px;
+        box-shadow: 3px 3px 10px -2px rgba(0,0,0,0.35);
+        background-color: #6BE47C;
+        color: #000;
+        font-weight: 700;
+    }
+    
+    
+    
+}
+
+@media (min-width: 830px) and (max-width: 1024px){
+    .services{
+        /* background-color: red; */
+        /* display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;   
+         */
+        margin-bottom: 80px;
+    }
+    
+    .services h2{
+        font-size: 2.5rem;
+        margin-top: 30px;
+        color: #16535D;
+    }
+    
+    .service-itself{
+       display: flex; 
+       flex-wrap: wrap;
+       /* height: 250px; */
+       width: 100%;
+       padding: 20px;
+       justify-content: center;
+       /* background-color: pink; */
+    }
+    
+    .service{
+        width: 400px;
+        /* background-color: pink; */
+        display: flex;
+        margin: 25px;
+    }
+    
+    .service-icon{
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+        /* background-color: orange; */
+        /* border: 3px solid #1B5A5F; */
+        color: #16535D;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* border-radius: 50%; */
+    }
+/*     
+    .service-text{
+        margin-left: 20px;
+    } */
+    
+    .service-text p{
+        font-size: 1.1rem;
+        margin-top: 6px;
+    }
+
+    .about-footer{
+        background: linear-gradient(70deg, #175762, #185A66, #16535D, #17555D, #276550);  
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 150px;
+        color: #fff;
+        
+    }
+    
+    
+    .about-footer h3{
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+    }
+    
+    .footer-button{
+        outline: none;
+        border: none;
+        width: 200px;
+        height: 50px;
+        font-size: 1.1rem;
+        border-radius: 10px;
+        box-shadow: 3px 3px 10px -2px rgba(0,0,0,0.35);
+        background-color: #6BE47C;
+        color: #000;
+        /* font-weight: 700; */
+    }
+}

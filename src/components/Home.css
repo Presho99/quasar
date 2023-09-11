@@ -259,7 +259,7 @@ border-radius: 5px;
 
 .logo span{
     /* color: #6BE47C; */
-    background: linear-gradient(to right, #6BE47C, #0171C0);
+    background-color: #16535D;
   -webkit-background-clip: text;
   color: transparent;
 }

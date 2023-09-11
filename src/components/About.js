@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./About.css";
 import { useNavigate, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import './AboutMedia.css'
 import {
   faBars,
   faXmark,
@@ -129,7 +130,7 @@ function About() {
             Founded in 2015, Quasar Energy Limited has established itself as a
             reliable and trusted supplier of LPG in the region. The company's
             commitment to quality and safety has earned it a loyal customer
-            base, which includes residential, commercial, and industrial clients
+            base.
           </p>
         </div>
         <div className="history-image">
@@ -153,9 +154,7 @@ function About() {
           <p>
             Quasar Energy Limited is a leading gas provider in Kenya,
             specializing in both retail and bulk LPG. The company is
-            headquartered in Nairobi and operates in the city and its environs,
-            with plans to expand to other parts of the country and the Eastern
-            African market at large.
+            headquartered in Nairobi and operates in the city and its environs.
           </p>
         </div>
       </div>
@@ -201,8 +200,7 @@ function About() {
 
             {activeButton === "Mission" && (
               <p>
-                Quasar Energy Limited has quickly established itself as a major
-                player in the energy sector. The company's mission is to be the
+                The company's mission is to be the
                 leading gas company in the region, providing its customers with
                 the highest quality gas products and services
               </p>
@@ -266,9 +264,9 @@ function About() {
       </div>
 
       <div className="about-footer">
-        <h3>REady to buy your clan energy? </h3>
+        <h3>Ready to buy your clean energy? </h3>
         {/* <h3>Start your free trial today</h3> */}
-        <button className="footer-button">Contact Us</button>
+        <button className="footer-button" onClick={() => navigate("/contacts")}>Contact Us</button>
       </div>
     </div>
   );

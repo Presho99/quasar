@@ -171,7 +171,7 @@ function Safety() {
         </div>
       </div>
       <div className="safety-footer">
-        <h3>REady to buy your clan energy? </h3>
+        <h3>Ready to get your clean energy? </h3>
         {/* <h3>Start your free trial today</h3> */}
         <button className="footer-button">Contact Us</button>
       </div>
