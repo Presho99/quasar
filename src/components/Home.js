@@ -25,7 +25,8 @@ function Home() {
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
     backgroundSize: "cover",
-    backgroundAttachment: "fixed",
+    
+
   };
 
   useEffect(() => {
@@ -41,7 +42,11 @@ function Home() {
     setIsMenuOpen(!isMenuOpen);
   };
   return (
-    <div className="home" style={inlineStyles}>
+    <div className="home" >
+      <div className="home-animation" style={inlineStyles}>
+      
+      </div>
+
       {isMenuOpen && (
         <div className="small-menu">
           <div className="small-menu-card">
