@@ -7,12 +7,14 @@ import {
   faEnvelope,
   faLocationDot,
   faPhone,
+  faXmark,
+  faBars
 } from "@fortawesome/free-solid-svg-icons";
 
 const navLinks = ["Home", "About", "Safety", "Contacts"];
 
 function Contacts() {
-  const [isMenu, setIsMenu] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const navigate = useNavigate();
   const { pathname } = useLocation();
@@ -23,11 +25,60 @@ function Contacts() {
     backgroundPosition: "bottom",
     backgroundSize: "cover",
   };
-  const apiKey = "AIzaSyCOKcHWUDOdcRYLIFFtBptivFStbIeJeCs";
-  const mapUrl = `https://maps.googleapis.com/maps/api/staticmap?key=${apiKey}&center=Nairobi&zoom=12&size=600x400`;
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 767);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+  
 
   return (
     <div className="contacts">
+      {isMenuOpen && (
+          <div className="small-menu">
+            <div className="small-menu-card">
+              <div className="small-logo">
+                <img src="/assets/logo.png" alt="logo" />
+              </div>
+
+              <div className="small-title">
+                <h3>
+                  Qu<span>a</span>sar
+                </h3>
+              </div>
+
+              <ul>
+                {navLinks.map((navLink) => (
+                  <li
+                    onClick={() => navigate(`/${navLink.toLowerCase()}`)}
+                    className={
+                      pathname === `/${navLink.toLowerCase()}`
+                        ? "active-li"
+                        : ""
+                    }
+                  >
+                    {navLink}
+                  </li>
+                ))}
+              </ul>
+              <button className="button-xmark x">
+                <FontAwesomeIcon
+                  icon={faXmark}
+                  className="xmark"
+                  onClick={toggleMenu}
+                />
+              </button>
+            </div>
+          </div>
+        )}
       <div className="overlay"></div>
       <div className="contact-hero" style={inlineStyles}>
         <div className="navbar">
@@ -35,18 +86,29 @@ function Contacts() {
             <h3>Quasar</h3>
           </div>
           <div className="nav">
-            <ul>
-              {navLinks.map((navLink) => (
-                <li
-                  onClick={() => navigate(`/${navLink.toLowerCase()}`)}
-                  className={
-                    pathname === `/${navLink.toLowerCase()}` ? "active-li" : ""
-                  }
-                >
-                  {navLink}
-                </li>
-              ))}
-            </ul>
+          {isSmallScreen ? (
+              <FontAwesomeIcon
+                icon={faBars}
+                className="nav-bars"
+                onClick={toggleMenu}
+                style={{ cursor: "pointer" }}
+              />
+            ) : (
+              <ul>
+                {navLinks.map((navLink) => (
+                  <li
+                    onClick={() => navigate(`/${navLink.toLowerCase()}`)}
+                    className={
+                      pathname === `/${navLink.toLowerCase()}`
+                        ? "active-li"
+                        : ""
+                    }
+                  >
+                    {navLink}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
         <h3>Contact Us</h3>
@@ -80,7 +142,7 @@ function Contacts() {
             <FontAwesomeIcon icon={faEnvelope} className="cont-icon" />
             <div className="cont-text">
               <h4>Email</h4>
-              <p>quasarenergy@gmail.com</p>
+              <p>quasarenergyltd@gmail.com</p>
             </div>
           </div>
         </div>

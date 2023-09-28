@@ -1,0 +1,9 @@
+@media (min-width: 280px) and (max-width: 540px){
+    .safety{
+        overflow: scroll;
+    }
+    .small-menu{
+        top: 0px;
+  
+    }
+}

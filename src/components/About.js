@@ -6,8 +6,7 @@ import './AboutMedia.css'
 import {
   faBars,
   faXmark,
-  faArrowRight,
-  faArrowRightLong,
+  
   faFireFlameSimple,
   faIndustry,
   faLeaf,
@@ -23,18 +22,12 @@ function About() {
   const [activeButton, setActiveButton] = useState("Vision");
   const navigate = useNavigate();
   const { pathname } = useLocation();
-  const header = "/assets/skyline.jpeg";
+
 
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);
   };
-  const inlineStyles = {
-    backgroundImage: `url(${header})`,
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "bottom",
-    backgroundSize: "cover",
-    backgroundAttachment: "fixed",
-  };
+ 
 
   useEffect(() => {
     const handleResize = () => {
@@ -50,9 +43,7 @@ function About() {
   };
   return (
     <div className="about">
-      <div className="about-hero">
-        {/* <div className="about-overlay"></div> */}
-        {isMenuOpen && (
+       {isMenuOpen && (
           <div className="small-menu">
             <div className="small-menu-card">
               <div className="small-logo">
@@ -89,6 +80,9 @@ function About() {
             </div>
           </div>
         )}
+      <div className="about-hero">
+        {/* <div className="about-overlay"></div> */}
+       
 
         <div className="navbar">
           <div className="logo">
@@ -135,12 +129,12 @@ function About() {
         </div>
         <div className="history-image">
           <div className="history-top">
-            <img src="/assets/history.jpeg" className="history-first" />
+            <img src="/assets/history.jpeg" alt="powerplant" className="history-first" />
           </div>
 
           <div className="history-bottom">
-            <img src="/assets/history.jpeg" className="history-second" />
-            <img src="/assets/history.jpeg" className="history-third" />
+            <img src="/assets/history.jpeg" alt="powerplant" className="history-second" />
+            <img src="/assets/history.jpeg" alt="powerplant" className="history-third" />
           </div>
         </div>
       </div>
@@ -263,11 +257,11 @@ function About() {
         </div>
       </div>
 
-      <div className="about-footer">
+      {/* <div className="about-footer">
         <h3>Ready to buy your clean energy? </h3>
-        {/* <h3>Start your free trial today</h3> */}
+       
         <button className="footer-button" onClick={() => navigate("/contacts")}>Contact Us</button>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -1,41 +1,58 @@
 import React from "react";
 import "./Safety.css";
+import './SafetyMedia.css';
 import "./Contacts.css";
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faClipboardCheck,
+  faBars,
   faComment,
   faExclamationTriangle,
   faTools,
-  faWifi,
+faXmark,
   faLeaf,
-  faSignal,
-  faFileInvoiceDollar,
+
+
   faHandsHelping,
 } from "@fortawesome/free-solid-svg-icons";
-import { FaGraduationCap } from "react-icons/fa";
+
 const navLinks = ["Home", "About", "Safety", "Contacts"];
 
 function Safety() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
   const navigate = useNavigate();
   const { pathname } = useLocation();
-  const header = "/assets/skyline.jpeg";
-  const inlineStyles = {
-    backgroundImage: `url(${header})`,
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "bottom",
-    backgroundSize: "cover",
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 767);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
+
+  
   return (
     <div className="safety">
-      <div className="safety-hero">
-        <div className="navbar">
-          <div className="logo">
-            <h3>Quasar</h3>
-          </div>
-          <div className="nav">
+       {isMenuOpen && (
+        <div className="small-menu">
+          <div className="small-menu-card">
+            <div className="small-logo">
+              <img src="/assets/logo.png" alt="logo" />
+            </div>
+
+            <div className="small-title">
+              <h3>Qu<span>a</span>sar</h3>
+            </div>
+
             <ul>
               {navLinks.map((navLink) => (
                 <li
@@ -48,6 +65,45 @@ function Safety() {
                 </li>
               ))}
             </ul>
+            <button className="button-xmark x">
+              <FontAwesomeIcon
+                icon={faXmark}
+                className="xmark"
+                onClick={toggleMenu}
+              />
+            </button>
+          </div>
+        </div>
+      )}
+      <div className="safety-hero">
+        <div className="navbar">
+          <div className="logo">
+            <h3>Quasar</h3>
+          </div>
+          <div className="nav">
+          {isSmallScreen ? (
+              <FontAwesomeIcon
+                icon={faBars}
+                className="nav-bars"
+                onClick={toggleMenu}
+                style={{ cursor: "pointer" }}
+              />
+            ) : (
+              <ul>
+                {navLinks.map((navLink) => (
+                  <li
+                    onClick={() => navigate(`/${navLink.toLowerCase()}`)}
+                    className={
+                      pathname === `/${navLink.toLowerCase()}`
+                        ? "active-li"
+                        : ""
+                    }
+                  >
+                    {navLink}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
         {/* <h3>Safety Measures</h3> */}
@@ -170,11 +226,11 @@ function Safety() {
           </div>
         </div>
       </div>
-      <div className="safety-footer">
+      {/* <div className="safety-footer">
         <h3>Ready to get your clean energy? </h3>
-        {/* <h3>Start your free trial today</h3> */}
+   
         <button className="footer-button">Contact Us</button>
-      </div>
+      </div> */}
     </div>
   );
 }

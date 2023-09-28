@@ -2,9 +2,29 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
     height: 100vh;
     width: 100vw;
     overflow: hidden;
+    /* background: linear-gradient(32deg,#174A48 5%,  #266453 32%, #124F5C, #053343 ); */
+}
+
+.first-logo, .second-logo{
+  position: absolute;
+  height: 2000px;
+  width: 1000px;
+  /* background-color: red; */
+}
+
+.first-logo{
+  top: -301px;
+  left: -490px;
+}
+
+.second-logo{
+  bottom: -641px;
+  left: 860px;
+    /* background-color: red; */
 }
 
 .loader-container{
@@ -42,16 +62,17 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  
 }
 
 .loader-text h3{
     font-size: 3rem;
     text-transform: uppercase;
-    color:  #16535D;
+    color: #174148;
 }
 
 .loader-text p{
-    color: #276550;
+  color: #174148;
     font-size: 1.2rem;
 }
 
