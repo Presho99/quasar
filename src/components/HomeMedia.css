@@ -29,6 +29,10 @@
     
     }
 
+    .small-menu-card{
+        margin-top: 0;
+    }
+
     .socials{
        display: none;
        
@@ -345,7 +349,7 @@
 
 /* Surface duo */
 
-/* @media (min-width: 540px) and (min-height: 720px){
+/* @media (min-width: 540px)  {
     .socials{
         display: none;
     }
@@ -411,10 +415,10 @@
     display: none;
 }
 
-
+ */
 
   
-   */
+  
 
    @media(min-width: 540px) and (max-width: 912px){
        .socials{
@@ -452,6 +456,10 @@
 
     .opaque{
         padding: 50px;
+    }
+
+    .small-menu-card{
+        z-index: 2500;
     }
 
    }

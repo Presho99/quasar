@@ -139,10 +139,28 @@ function About() {
         </div>
       </div>
 
-      <div className="about-us">
-        {/* <div className="about-image">
-          <img src="/assets/about.jpeg" />
-        </div> */}
+      {/* <div className="about-us">
+        <div className="about-text">
+          <h2>About Us</h2>
+          <p>
+            Quasar Energy Limited is a leading gas provider in Kenya,
+            specializing in both retail and bulk LPG. The company is
+            headquartered in Nairobi and operates in the city and its environs.
+          </p>
+        </div>
+      </div> */}
+
+      <div className="vmg">
+        <div className="blobs">
+          {/* <div className="shape-blob"></div> */}
+          <div className="shape-blob one"></div>
+          <div className="shape-blob two"></div>
+          {/* <div className="shape-blob three"></div>
+          <div className="shape-blob four"></div>
+          <div className="shape-blob five"></div>
+          <div className="shape-blob six"></div> */}
+        </div>
+        <div className="about-us">
         <div className="about-text">
           <h2>About Us</h2>
           <p>
@@ -152,8 +170,6 @@ function About() {
           </p>
         </div>
       </div>
-
-      <div className="vmg">
         <div className="vmg-buttons">
           <div className="vision">
             <button
