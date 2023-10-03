@@ -11,7 +11,7 @@ import {
   faBars
 } from "@fortawesome/free-solid-svg-icons";
 
-const navLinks = ["Home", "About", "Safety", "Contacts"];
+const navLinks = ["Home", "About", "Services", "Contacts"];
 
 function Contacts() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
