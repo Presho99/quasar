@@ -1,4 +1,11 @@
 @media (min-width: 280px) and (max-width: 540px){
+    .four{
+        display: none;
+    }
+    .one{
+        left: 50%;
+        width: 400px;
+    }
     .about{
     
     }
@@ -226,6 +233,7 @@
 }
 
 @media (min-width: 768px) and (max-width: 1024px){
+    
     .services{
         /* background-color: red; */
         /* display: flex;

@@ -2,19 +2,25 @@ import React, { useState, useEffect } from "react";
 import "./About.css";
 import { useNavigate, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import './AboutMedia.css'
+import "./AboutMedia.css";
 import {
   faBars,
   faXmark,
-  
   faFireFlameSimple,
   faIndustry,
   faLeaf,
   faRecycle,
 } from "@fortawesome/free-solid-svg-icons";
+import {
+  faClipboardCheck,
+  faComment,
+  faExclamationTriangle,
+  faTools,
+  faHandsHelping,
+} from "@fortawesome/free-solid-svg-icons";
 import "./Contacts.css";
 
-const navLinks = ["Home", "About", "Safety", "Contacts"];
+const navLinks = ["Home", "About", "Services", "Contacts"];
 
 function About() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,11 +29,9 @@ function About() {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
-
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName);
   };
- 
 
   useEffect(() => {
     const handleResize = () => {
@@ -43,46 +47,43 @@ function About() {
   };
   return (
     <div className="about">
-       {isMenuOpen && (
-          <div className="small-menu">
-            <div className="small-menu-card">
-              <div className="small-logo">
-                <img src="/assets/logo.png" alt="logo" />
-              </div>
-
-              <div className="small-title">
-                <h3>
-                  Qu<span>a</span>sar
-                </h3>
-              </div>
-
-              <ul>
-                {navLinks.map((navLink) => (
-                  <li
-                    onClick={() => navigate(`/${navLink.toLowerCase()}`)}
-                    className={
-                      pathname === `/${navLink.toLowerCase()}`
-                        ? "active-li"
-                        : ""
-                    }
-                  >
-                    {navLink}
-                  </li>
-                ))}
-              </ul>
-              <button className="button-xmark x">
-                <FontAwesomeIcon
-                  icon={faXmark}
-                  className="xmark"
-                  onClick={toggleMenu}
-                />
-              </button>
+      {isMenuOpen && (
+        <div className="small-menu">
+          <div className="small-menu-card">
+            <div className="small-logo">
+              <img src="/assets/logo.png" alt="logo" />
             </div>
+
+            <div className="small-title">
+              <h3>
+                Qu<span>a</span>sar
+              </h3>
+            </div>
+
+            <ul>
+              {navLinks.map((navLink) => (
+                <li
+                  onClick={() => navigate(`/${navLink.toLowerCase()}`)}
+                  className={
+                    pathname === `/${navLink.toLowerCase()}` ? "active-li" : ""
+                  }
+                >
+                  {navLink}
+                </li>
+              ))}
+            </ul>
+            <button className="button-xmark x">
+              <FontAwesomeIcon
+                icon={faXmark}
+                className="xmark"
+                onClick={toggleMenu}
+              />
+            </button>
           </div>
-        )}
+        </div>
+      )}
       <div className="about-hero">
         {/* <div className="about-overlay"></div> */}
-       
 
         <div className="navbar">
           <div className="logo">
@@ -118,6 +119,7 @@ function About() {
       </div>
 
       <div className="our-history">
+        <div className="shape-blob four"></div>
         <div className="history-text">
           <h2>Our History</h2>
           <p>
@@ -129,12 +131,24 @@ function About() {
         </div>
         <div className="history-image">
           <div className="history-top">
-            <img src="/assets/history.jpeg" alt="powerplant" className="history-first" />
+            <img
+              src="/assets/history.jpeg"
+              alt="powerplant"
+              className="history-first"
+            />
           </div>
 
           <div className="history-bottom">
-            <img src="/assets/history.jpeg" alt="powerplant" className="history-second" />
-            <img src="/assets/history.jpeg" alt="powerplant" className="history-third" />
+            <img
+              src="/assets/history.jpeg"
+              alt="powerplant"
+              className="history-second"
+            />
+            <img
+              src="/assets/history.jpeg"
+              alt="powerplant"
+              className="history-third"
+            />
           </div>
         </div>
       </div>
@@ -154,22 +168,23 @@ function About() {
         <div className="blobs">
           {/* <div className="shape-blob"></div> */}
           <div className="shape-blob one"></div>
-          <div className="shape-blob two"></div>
+
           {/* <div className="shape-blob three"></div>
           <div className="shape-blob four"></div>
           <div className="shape-blob five"></div>
           <div className="shape-blob six"></div> */}
         </div>
         <div className="about-us">
-        <div className="about-text">
-          <h2>About Us</h2>
-          <p>
-            Quasar Energy Limited is a leading gas provider in Kenya,
-            specializing in both retail and bulk LPG. The company is
-            headquartered in Nairobi and operates in the city and its environs.
-          </p>
+          <div className="about-text">
+            <h2>About Us</h2>
+            <p>
+              Quasar Energy Limited is a leading gas provider in Kenya,
+              specializing in both retail and bulk LPG. The company is
+              headquartered in Nairobi and operates in the city and its
+              environs.
+            </p>
+          </div>
         </div>
-      </div>
         <div className="vmg-buttons">
           <div className="vision">
             <button
@@ -210,9 +225,9 @@ function About() {
 
             {activeButton === "Mission" && (
               <p>
-                The company's mission is to be the
-                leading gas company in the region, providing its customers with
-                the highest quality gas products and services
+                The company's mission is to be the leading gas company in the
+                region, providing its customers with the highest quality gas
+                products and services
               </p>
             )}
 
@@ -228,7 +243,85 @@ function About() {
         </div>
       </div>
 
+      <div className="safety-container">
+        <h2>Safety Measures</h2>
+        <div className="cards">
+          <div className="safety-card">
+            <img  src="/assets/history.jpeg"/>
+            <h3 className="absolute-head">Regulatory Compliance</h3>
+            <div className="safety-text">
+              <h3>Regulatory Compliance</h3>
+              <p>
+                Ensuring that the company adheres to all laws set by Kenyan
+                authorities in the energy sector.
+              </p>
+            </div>
+          </div>
+          <div className="safety-card">
+          <img  src="/assets/history.jpeg"/>
+          <h3 className="absolute-head">Regulatory Maintenance</h3>
+            <div className="safety-text">
+              <h3>Regular Maintenance</h3>
+              <p>
+                Conducting routine inspections of energy infrastructure for
+                safety and reliability.
+              </p>
+            </div>
+          </div>
+          <div className="safety-card">
+          <img  src="/assets/history.jpeg"/>
+          <h3 className="absolute-head">Emergency Response Plans</h3>
+           
+            <div className="safety-text">
+              <h3>Emergency Response Plans</h3>
+              <p>
+                Creating emergency response plans for power outages and
+                unforeseen incidents.
+              </p>
+            </div>
+          </div>
+
+          <div className="safety-card">
+          <img  src="/assets/history.jpeg"/>
+          <h3 className="absolute-head">Customer Engagement</h3>
+            <div className="safety-text">
+              <h3>Customer Engagement</h3>
+              <p>
+                Interacting with customers to collect feedback and provide
+                energy-related information.
+              </p>
+            </div>
+          </div>
+
+          <div className="safety-card">
+          <img  src="/assets/history.jpeg"/>
+          <h3 className="absolute-head">Environment Responsibility</h3>
+            <div className="safety-text">
+              <h3>Environmental Responsibility</h3>
+              <p>
+                {" "}
+                Promoting eco-friendly energy practices, minimizing
+                environmental impact
+              </p>
+            </div>
+          </div>
+
+          <div className="safety-card">
+          <img  src="/assets/history.jpeg"/>
+          <h3 className="absolute-head">Community Involvement</h3>
+            <div className="safety-text">
+              <h3>Community Involvement</h3>
+              <p>
+                Engaging with local communities through corporate social
+                responsibility (CSR) initiatives
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="services">
+        <div className="shape-blob two"></div>
         <h2>Our Services</h2>
         <div className="service-itself">
           <div className="service">

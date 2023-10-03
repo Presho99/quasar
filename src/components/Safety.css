@@ -21,30 +21,60 @@
 .safety-container{
     /* background-color: red; */
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    padding: 0 20px;
+    /* padding: 0 20px; */
     justify-content: center;
-    margin-top: 100px;
-    height: 50%;
+    margin-top: 50px;
+    /* height: 50%; */
     margin-bottom: 68px;
+    align-items: center;
 
+}
+
+.safety-container h2{
+    font-size: 2.5rem;
+    margin-top: 30px;
+    color: #16535D;
+    margin-bottom: 20px;
+}
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: aqua; */
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .safety-card{
     /* background-color: pink; */
     margin-left: 10px;
     margin-top: 30px;
-    width: 350px;
-    height: 150px;
+    width: 24rem;
+    height: 24rem;
     position: relative;
     padding: 20px;
     display: flex;
     justify-content: center;
+    overflow: hidden;
+    border-radius: 10px;
     align-items: center;
     box-shadow: 3px 3px 10px -2px rgba(0,0,0,0.35);
     /* -webkit-box-shadow: 10px 4px 2px 0px rgba(0,0,0,0.35);
     -moz-box-shadow: 10px 4px 2px 0px rgba(0,0,0,0.35); */
 
+}
+
+.safety-card img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+top: 0;
+left: 0;
+opacity: 1;
+transition: opacity .2s ease-out;
 }
 
 .safety-icon{
@@ -65,21 +95,72 @@
 .safety-icon-itself{
     color: #fff;
 }
+.absolute-head{
+    color: #6BE47C;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+  transition: .3s ease-in;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.safety-card:hover .absolute-head{
+    opacity: 0;
+}
 
 .safety-text{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
+    align-items: left;
+    text-align: left;
+    /* background-color: blue; */
+    z-index: 200;
+    position: absolute;
+    left: 20px;
+    height: 150px;
+    bottom: 20px;
+    opacity: 0;
+    transition: .3s ease-in;
+    
+}
+
+.safety-card:hover .safety-text{
+    opacity: 1;
 }
 
 .safety-card h3{
-    color: #16535D;
+    color: #6BE47C;
+  
+    margin-bottom: 20px;
+    /* transition: inset .3s .3s ease-out; */
+    text-transform: uppercase;
 }
 
 .safety-card p{
     line-height: 1.5;
+    color: #fff;
+    /* position: absolute; */
+    /* opacity: 0; */
+    max-width: 80%;
+    transition: opacity .3s ease-out;
+/* inset: auto ; */
+}
+
+.safety-card:hover h2{
+    /* inset: auto auto 220px 30px;
+    transition: inset .3s ease-out; */
+}
+
+.safety-card:hover p{
+  /* opacity: 1;
+    transition: opacity .3s ease-in; */
+}
+
+.safety-card:hover img{
+    /* opacity: .9;
+    transition: opacity .3s ease-in; */
 }
 
 .safety-footer{
