@@ -10,6 +10,7 @@ import {
   faXmark,
   faBars
 } from "@fortawesome/free-solid-svg-icons";
+import './ContactMedia.css'
 
 const navLinks = ["Home", "About", "Services", "Contacts"];
 
@@ -24,6 +25,7 @@ function Contacts() {
     backgroundRepeat: "no-repeat",
     backgroundPosition: "bottom",
     backgroundSize: "cover",
+    
   };
 
   useEffect(() => {
@@ -111,7 +113,7 @@ function Contacts() {
             )}
           </div>
         </div>
-        <h3>Contact Us</h3>
+        <h3 className="contact-us">Contact Us</h3>
       </div>
       <div className="contact-middle">
         <div className="map">
@@ -149,17 +151,9 @@ function Contacts() {
       </div>
 
       <div className="footer">
-        <div className="footer-text">
-          <div className="footer-h">
-            <h4>Quasar</h4>
-          </div>
-
-          <div className="footer-p">
-            <p>Energy Limited</p>
-          </div>
-        </div>
+      
         <div className="credits">
-          <p> &copy; 2023 Created by Precious Omondi</p>
+          <p> &copy; 2023 Quasar Energy Limited</p>
         </div>
       </div>
    
