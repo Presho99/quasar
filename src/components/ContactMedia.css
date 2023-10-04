@@ -1,0 +1,143 @@
+@media (min-width: 280px) and (max-width: 540px){
+    .contact-hero {
+    width: 100%;
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    /* background-attachment: fixed; */
+;
+    
+   
+  }
+    
+    .contact-middle {
+        height: 70vh;
+        flex-direction: column;
+
+        padding: 0;
+      }
+
+      .contact-middle .map {
+        background-color: black;
+        height: 35vh;
+        width: 100%;
+      }
+
+      .contact-middle .contact-form {
+        height: 35vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        justify-content: center;
+        color: black;
+        
+      }
+
+      .cont-text p{
+        font-size: 1rem;
+    }
+
+    .contact-us{
+        display: none;
+    }
+
+    .contact-hero .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 30px 30px;
+        z-index: 100;
+      }
+      
+    
+
+}
+/* .contacts {
+    font-family: "Lato", sans-serif;
+    min-height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+  }
+  
+  
+  
+  
+  .contact-hero h3 {
+    z-index: 100;
+  
+  }
+  
+  .overlay {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 35vh;
+    background-color: rgba(0, 0, 0, 0.55);
+  }
+  
+  
+  
+  
+  
+ 
+  
+  .cont {
+    display: flex;
+    margin-bottom: 20px;
+    height: 60px;
+    align-items: center;
+  }
+  
+  .cont-icon{
+      font-size: 1.4rem;
+      color:  #16535D;
+  }
+  
+  .cont-text{
+      margin-left: 20px;
+  }
+  
+  .cont-text h4{
+      text-transform: uppercase;
+      font-size: .8rem;
+  }
+  
+ 
+  .footer {
+    height: 10vh;
+    width: 100%;
+    background: linear-gradient(70deg, #175762, #185A66, #16535D, #17555D, #276550); 
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .footer-text{
+    
+  }
+  
+  .footer-text h4 {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+  }
+  
+  
+  
+  .footer-p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  
+   */
